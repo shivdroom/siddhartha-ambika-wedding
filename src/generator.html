@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Wedding Guest Link Generator</title>
+
+    <style>
+
+        *{
+
+            margin:0;
+
+            padding:0;
+
+            box-sizing:border-box;
+
+        }
+
+        body{
+
+            background:#F8F5F0;
+
+            font-family:'Segoe UI',sans-serif;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            min-height:100vh;
+
+            padding:20px;
+
+        }
+
+        .generator-card{
+
+            width:100%;
+
+            max-width:550px;
+
+            background:#fff;
+
+            border-radius:18px;
+
+            padding:40px;
+
+            box-shadow:
+                0 12px 40px rgba(0,0,0,.08);
+
+        }
+
+        h1{
+
+            text-align:center;
+
+            color:#B68A3A;
+
+            margin-bottom:10px;
+
+        }
+
+        p{
+
+            text-align:center;
+
+            color:#777;
+
+            margin-bottom:30px;
+
+        }
+
+        label{
+
+            display:block;
+
+            margin-bottom:10px;
+
+            font-weight:600;
+
+        }
+
+        input{
+
+            width:100%;
+
+            padding:14px;
+
+            font-size:17px;
+
+            border:1px solid #ddd;
+
+            border-radius:8px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="generator-card">
+
+        <h1>Wedding Guest Link Generator</h1>
+
+        <p>
+            Enter the guest name below.
+        </p>
+
+        <label>
+
+            Guest Name
+
+        </label>
+
+        <input
+    id="guestName"
+    type="text"
+    placeholder="Example : Rawat Family">
+
+<button id="generateBtn">
+
+    Generate Link
+
+</button>
+
+<br><br>
+
+<textarea
+    id="generatedLink"
+    rows="4"
+    readonly
+    placeholder="Your personalized invitation link will appear here..."></textarea>
+
+    <br><br>
+
+<button id="copyBtn">
+
+    Copy Link
+
+</button>
+    </div>
+    
+<script>
+
+document
+.getElementById("generateBtn")
+.addEventListener("click", function(){
+
+    const guest =
+    document
+    .getElementById("guestName")
+    .value
+    .trim();
+
+    if(guest===""){
+
+        alert("Please enter a guest name.");
+
+        return;
+
+    }
+
+    const cleanGuest = encodeURIComponent(guest.trim());
+
+    const websiteURL = "https://shivanshuwedspragya.in/?guest=";
+
+    document
+.getElementById("generatedLink")
+.value =
+websiteURL + cleanGuest;
+
+});
+
+document
+.getElementById("copyBtn")
+.addEventListener("click", function(){
+
+    const link =
+    document.getElementById("generatedLink");
+
+    if(link.value===""){
+
+        alert("Please generate a link first.");
+
+        return;
+
+    }
+
+    navigator.clipboard.writeText(link.value);
+
+    alert("Invitation link copied successfully!");
+
+});
+
+</script>
+
+</body>
+
+</html>
