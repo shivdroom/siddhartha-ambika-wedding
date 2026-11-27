@@ -1,209 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <title>Wedding Guest Link Generator</title>
+    <title>Siddhartha & Ambika | Guest Link Generator</title>
 
     <style>
-
-        *{
-
-            margin:0;
-
-            padding:0;
-
-            box-sizing:border-box;
-
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        body{
-
-            background:#F8F5F0;
-
-            font-family:'Segoe UI',sans-serif;
-
-            display:flex;
-
-            justify-content:center;
-
-            align-items:center;
-
-            min-height:100vh;
-
-            padding:20px;
-
+        body {
+            min-height: 100vh;
+            background: #F5EFE4;
+            color: #2F4638;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .generator-card{
-
-            width:100%;
-
-            max-width:550px;
-
-            background:#fff;
-
-            border-radius:18px;
-
-            padding:40px;
-
-            box-shadow:
-                0 12px 40px rgba(0,0,0,.08);
-
+        .generator-card {
+            width: 100%;
+            max-width: 480px;
+            background: #FFFCF7;
+            border: 1px solid rgba(184, 154, 95, 0.35);
+            border-radius: 22px;
+            padding: 30px 24px;
+            box-shadow: 0 12px 40px rgba(47, 70, 56, 0.08);
         }
 
-        h1{
-
-            text-align:center;
-
-            color:#B68A3A;
-
-            margin-bottom:10px;
-
+        .logo {
+            display: block;
+            width: 110px;
+            max-width: 40%;
+            margin: 0 auto 18px;
         }
 
-        p{
-
-            text-align:center;
-
-            color:#777;
-
-            margin-bottom:30px;
-
+        .eyebrow {
+            text-align: center;
+            color: #A6684B;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
 
-        label{
-
-            display:block;
-
-            margin-bottom:10px;
-
-            font-weight:600;
-
+        h1 {
+            text-align: center;
+            font-family: Georgia, serif;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: 1.2;
+            margin-bottom: 12px;
         }
 
-        input{
-
-            width:100%;
-
-            padding:14px;
-
-            font-size:17px;
-
-            border:1px solid #ddd;
-
-            border-radius:8px;
-
+        .description {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 28px;
         }
 
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            color: #2F4638;
+            background: #fff;
+            border: 1px solid #D9D0C2;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #B89A5F;
+            box-shadow: 0 0 0 3px rgba(184, 154, 95, 0.12);
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .generate-btn {
+            margin-top: 15px;
+            background: #2F4638;
+            color: #F5EFE4;
+        }
+
+        .generate-btn:hover {
+            background: #3D5948;
+        }
+
+        .result-section {
+            margin-top: 25px;
+            display: none;
+        }
+
+        .result-section.show {
+            display: block;
+        }
+
+        .result-label {
+            font-size: 12px;
+            color: #A6684B;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            resize: none;
+            padding: 13px;
+            font-size: 13px;
+            line-height: 1.6;
+            border: 1px solid #D9D0C2;
+            border-radius: 10px;
+            background: #F8F5F0;
+            color: #2F4638;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            margin-top: 12px;
+            background: #B89A5F;
+            color: white;
+        }
+
+        .copy-btn:hover {
+            background: #A6884E;
+        }
+
+        .whatsapp-btn {
+            margin-top: 10px;
+            background: #E8EFE8;
+            color: #2F4638;
+        }
+
+        .whatsapp-btn:hover {
+            background: #DCE8DC;
+        }
+
+        .new-btn {
+            margin-top: 10px;
+            background: transparent;
+            color: #777;
+            border: 1px solid #DDD4C6;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+            margin-top: 25px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 14px;
+                align-items: flex-start;
+            }
+
+            .generator-card {
+                padding: 25px 20px;
+                margin-top: 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
     </style>
-
 </head>
 
 <body>
 
     <div class="generator-card">
 
-        <h1>Wedding Guest Link Generator</h1>
+        <img
+            src="../assets/logo/siddhartha-ambika/SA-Master-Monogram.png"
+            alt="Siddhartha and Ambika"
+            class="logo">
 
-        <p>
-            Enter the guest name below.
+        <p class="eyebrow">Private Wedding Tool</p>
+
+        <h1>Guest Link Generator</h1>
+
+        <p class="description">
+            Create a personalised invitation link
+            for your guests and family.
         </p>
 
-        <label>
-
-            Guest Name
-
-        </label>
+        <label for="guestName">Guest / Family Name</label>
 
         <input
-    id="guestName"
-    type="text"
-    placeholder="Example : Rawat Family">
+            type="text"
+            id="guestName"
+            placeholder="Example: Rawat Family">
 
-<button id="generateBtn">
+        <button class="generate-btn" id="generateBtn">
+            Generate Invitation Link
+        </button>
 
-    Generate Link
+        <div class="result-section" id="resultSection">
 
-</button>
+            <p class="result-label">Personalised Invitation Link</p>
 
-<br><br>
+            <textarea
+                id="generatedLink"
+                readonly></textarea>
 
-<textarea
-    id="generatedLink"
-    rows="4"
-    readonly
-    placeholder="Your personalized invitation link will appear here..."></textarea>
+            <button class="copy-btn" id="copyBtn">
+                Copy Link
+            </button>
 
-    <br><br>
+            <button class="whatsapp-btn" id="whatsappBtn">
+                Share on WhatsApp
+            </button>
 
-<button id="copyBtn">
+            <button class="new-btn" id="newBtn">
+                Generate Next Guest
+            </button>
 
-    Copy Link
+        </div>
 
-</button>
+        <p class="footer">
+            SIDDHARTHA & AMBIKA · JANUARY 2027
+        </p>
+
     </div>
-    
-<script>
 
-document
-.getElementById("generateBtn")
-.addEventListener("click", function(){
+    <script>
 
-    const guest =
-    document
-    .getElementById("guestName")
-    .value
-    .trim();
+        const guestInput = document.getElementById("guestName");
+        const generateBtn = document.getElementById("generateBtn");
+        const resultSection = document.getElementById("resultSection");
+        const generatedLink = document.getElementById("generatedLink");
+        const copyBtn = document.getElementById("copyBtn");
+        const whatsappBtn = document.getElementById("whatsappBtn");
+        const newBtn = document.getElementById("newBtn");
 
-    if(guest===""){
+        let currentGuest = "";
 
-        alert("Please enter a guest name.");
+        function generateInvitation() {
 
-        return;
+            const guest = guestInput.value.trim();
 
-    }
+            if (!guest) {
+                alert("Please enter the guest or family name.");
+                guestInput.focus();
+                return;
+            }
 
-    const cleanGuest = encodeURIComponent(guest.trim());
+            currentGuest = guest;
 
-    const websiteURL = "https://shivanshuwedspragya.in/?guest=";
+            // Automatically find the main invitation page
+            const invitationURL = new URL("index.html", window.location.href);
 
-    document
-.getElementById("generatedLink")
-.value =
-websiteURL + cleanGuest;
+            invitationURL.searchParams.set("guest", guest);
 
-});
+            generatedLink.value = invitationURL.href;
 
-document
-.getElementById("copyBtn")
-.addEventListener("click", function(){
+            resultSection.classList.add("show");
 
-    const link =
-    document.getElementById("generatedLink");
+        }
 
-    if(link.value===""){
+        generateBtn.addEventListener("click", generateInvitation);
 
-        alert("Please generate a link first.");
+        guestInput.addEventListener("keydown", function(event) {
 
-        return;
+            if (event.key === "Enter") {
+                generateInvitation();
+            }
 
-    }
+        });
 
-    navigator.clipboard.writeText(link.value);
+        copyBtn.addEventListener("click", async function() {
 
-    alert("Invitation link copied successfully!");
+            if (!generatedLink.value) {
+                return;
+            }
 
-});
+            try {
 
-</script>
+                await navigator.clipboard.writeText(generatedLink.value);
+
+                copyBtn.textContent = "Copied Successfully!";
+
+                setTimeout(function() {
+                    copyBtn.textContent = "Copy Link";
+                }, 2000);
+
+            } catch (error) {
+
+                generatedLink.select();
+
+                document.execCommand("copy");
+
+                copyBtn.textContent = "Copied!";
+
+                setTimeout(function() {
+                    copyBtn.textContent = "Copy Link";
+                }, 2000);
+
+            }
+
+        });
+
+        whatsappBtn.addEventListener("click", function() {
+
+            if (!generatedLink.value) {
+                return;
+            }
+
+            const message =
+                "Dear " + currentGuest + ",\n\n" +
+                "We are delighted to invite you to celebrate " +
+                "the wedding of Siddhartha & Ambika.\n\n" +
+                "Please find your personalised invitation below:\n\n" +
+                generatedLink.value;
+
+            const whatsappURL =
+                "https://wa.me/?text=" +
+                encodeURIComponent(message);
+
+            window.open(whatsappURL, "_blank");
+
+        });
+
+        newBtn.addEventListener("click", function() {
+
+            guestInput.value = "";
+            generatedLink.value = "";
+            resultSection.classList.remove("show");
+
+            guestInput.focus();
+
+        });
+
+    </script>
 
 </body>
-
 </html>

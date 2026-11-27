@@ -10,32 +10,94 @@
     padding:120px 24px;
 }
 .hero-content{width:100%;}
-.logo{width:115px;margin-bottom:28px;}
+.couple-name{
+    font-size:clamp(42px, 11vw, 56px);
+    line-height:1;
+    gap:8px;
+}
+
+.hero-ampersand{
+    font-size:.75em;
+    margin:4px 0;
+}
+.logo{width:300px;margin-bottom:28px;}
 .blessing{font-size:28px;margin-bottom:34px;}
 .hero-couple-name{display:flex;flex-direction:column;align-items:center;gap:12px;}
 .hero-ampersand{font-size:.9em;line-height:1;margin:6px 0;}
 .guest-name{font-size:16px;margin-bottom:44px;}
 
-.divine-beginning{padding:80px 24px;}
-.divine-content{max-width:100%;}
-.section-subtitle{font-size:12px;letter-spacing:3px;}
-.section-title{font-size:48px;line-height:1.1;margin:14px 0 26px;}
-.section-text{
+/* DIVINE BEGINNING — MOBILE */
 
-    max-width:295px;
-
-    margin:0 auto 22px;
-
-    font-size:19px;
-
-    line-height:1.9;
-
+.divine-beginning{
+    padding:72px 20px 78px;
 }
 
-.invitation{padding:90px 20px;background-size:650px;}
+.divine-content{
+    width:100%;
+    max-width:100%;
+    margin:0 auto;
+}
+
+.divine-beginning .section-subtitle{
+    font-size:11px;
+    letter-spacing:2.5px;
+    line-height:1.7;
+}
+
+.divine-beginning .section-title{
+    font-size:42px;
+    line-height:1.12;
+    margin:12px 0 18px;
+}
+
+.divine-beginning .section-tagline{
+    max-width:320px;
+    margin:0 auto 30px;
+    font-size:16px;
+    line-height:1.7;
+}
+
+.divine-beginning .sanskrit-verse{
+    max-width:340px;
+    margin:0 auto 24px;
+    font-size:21px;
+    line-height:1.9;
+    letter-spacing:0;
+}
+
+.divine-beginning .verse-source{
+    max-width:320px;
+    margin:-10px auto 30px;
+    font-size:11px;
+    line-height:1.8;
+    letter-spacing:0.3px;
+}
+
+.divine-beginning .section-text:not(.sanskrit-verse){
+    max-width:340px;
+    margin:0 auto 18px;
+    font-size:18px;
+    line-height:1.85;
+}
+
+.invitation{
+    padding:60px 20px 90px;
+    background-size:650px;
+}
 .invitation-content{max-width:100%;}
-.photo-frame{width:100%;max-width:100%;margin:0 auto 32px;padding:8px;box-sizing:border-box;}
-.invitation-photo{width:100%;display:block;}
+.photo-frame{
+    width:100%;
+    max-width:340px;
+    margin:0 auto 32px;
+    padding:8px;
+    box-sizing:border-box;
+}
+.invitation-photo{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:cover;
+}
 .invitation-title{font-size:46px;line-height:1.15;margin:28px 0 18px;}
 .invitation-title span{display:block;padding:4px 0;}
 .invitation-text{max-width:100%;font-size:19px;line-height:1.8;}
@@ -64,19 +126,17 @@
 
 .home-background{
 
+    content:url("../../assets/images/siddhartha-ambika/SA-Pichoda-Mobile.webp");
+
     top:0;
-
     left:0;
-
     width:100%;
-
     height:100%;
 
     object-fit:cover;
+    object-position:center center;
 
-    object-position:center top;
-
-    opacity:.14;
+    opacity:.70;
 
 }
 .home-description{font-size:18px;line-height:1.9;margin:40px auto 70px;}
@@ -100,11 +160,11 @@
 
     border-radius:40px;
 
-    border:1px solid #C5A15B;
+    border: 1px solid var(--antique-gold);
 
-    background:transparent;
+    background:var(--forest-green);
 
-    color:#B88635;
+    color:var(--ivory);
 
     font-family:'Montserrat',sans-serif;
 
@@ -196,7 +256,7 @@
 
     line-height:1.75;
 
-    color:#7A6244;
+    color:var(--text-secondary);
 
     margin:14px auto 28px;
 
@@ -330,7 +390,7 @@
 
     font-weight:600;
 
-    color:#B68A3A;
+    color:var(--forest-green);
 
     line-height:1;
 
@@ -359,7 +419,7 @@
 
     font-style:italic;
 
-    color:#6E5A45;
+    color:var(--text-secondary);
 
 }
 
@@ -471,4 +531,39 @@
     width:55px;
 
 }
+}
+
+/* HERO COUPLE NAMES — MOBILE */
+@media (max-width: 768px) {
+    .hero-content h1.couple-name.hero-couple-name {
+        font-size: clamp(38px, 10vw, 52px) !important;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content .groom-name,
+    .hero-content .bride-name {
+        font-size: 30px !important;
+    }
+
+    .hero-content .hero-ampersand {
+        font-size: 24px !important;
+    }
+}
+
+/* SOUND CONTROL — MOBILE ONLY */
+@media (max-width: 768px) {
+    .sound-toggle {
+        bottom: 18px;
+        right: 16px;
+        padding: 10px 14px;
+        gap: 7px;
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .sound-toggle .sound-icon {
+        font-size: 15px;
+    }
 }
